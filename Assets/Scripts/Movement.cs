@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public enum SpeedsPlayer { Slow = 0, Normal = 1, Fast = 2, Faster = 3, Fasters = 4 };
 public enum Gamemodes { Cube = 0, Ship = 1, Ball = 2, UFO = 3, Wave = 4 };
@@ -20,7 +21,7 @@ public class Movement : MonoBehaviour
 
     private float currentAngle = 0f;
     private float targetAngle = 0f;
-    private float rotationSpeed = 180f;
+    private float rotationSpeed = 360f;
 
     public float jumpForce = 50f;
 
@@ -116,6 +117,12 @@ public class Movement : MonoBehaviour
             case 2:
                 Gravity = gravity;
                 rb.gravityScale = Mathf.Abs(rb.gravityScale) * (int)gravity;
+
+                // Отражение спрайта по горизонтали
+                Vector3 currentScale = Sprite.GetComponent<SpriteRenderer>().transform.localScale;
+                currentScale.y *= -1; // Изменяем знак масштаба по оси Y
+                Sprite.GetComponent<SpriteRenderer>().transform.localScale = currentScale; // Применяем измененный масштаб
+
                 break;
         }
 
@@ -130,11 +137,12 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("bas")) // Проверяем тег объекта
-        {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // Применяем силу прыжка вверх
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+      //  if (collision.gameObject.CompareTag("bas")) // Проверяем тег объекта
+        //{
+          //  rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // Применяем силу прыжка вверх
+        //}
+    //}
+
 }
