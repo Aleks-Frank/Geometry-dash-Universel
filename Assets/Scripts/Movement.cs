@@ -137,12 +137,12 @@ public class Movement : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-      //  if (collision.gameObject.CompareTag("bas")) // Проверяем тег объекта
-        //{
-          //  rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // Применяем силу прыжка вверх
-        //}
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("bas")) // Проверяем тег объекта
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // Применяем силу прыжка вверх
+        }
+    }
 
 }

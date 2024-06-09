@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Sound
   - Tilemap2Collider
+  - FinishLine
+  - StartLine
+  - bas
   layers:
   - Default
   - TransparentFX

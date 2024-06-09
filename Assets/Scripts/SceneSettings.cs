@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneSettings : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class SceneSettings : MonoBehaviour
 
     public void RestartButtonPressed()
     {
+        PlayerPrefs.DeleteKey("BestProgress");
+        PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
