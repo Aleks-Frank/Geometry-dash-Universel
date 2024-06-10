@@ -5260,6 +5260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winPanel: {fileID: 111335562}
   uiEndImage: {fileID: 1171106303}
+  levelIndex: 3
 --- !u!61 &1425712898
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32571,6 +32572,8 @@ MonoBehaviour:
   - {fileID: 98331772}
   - {fileID: 611860833}
   - {fileID: 1538517213}
+  levelIndex: 3
+  maxWidth: 180
 --- !u!114 &1782084141
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -35,13 +35,11 @@ public class LevelProgressManager : MonoBehaviour
                     leftImages[i].gameObject.SetActive(true);
                 }
 
-                // Открываем правые элементы если длина равна maxWidth
-                if (Mathf.Approximately(newWidth, maxWidth) && i < rightImages.Length)
+                if (RightElementsStateManager.rightElementsState[levelIndex - 2] && i < rightImages.Length)
                 {
                     rightImages[i].gameObject.SetActive(true);
                 }
 
-                Debug.LogWarning("newWidth: " + newWidth + ", maxWidth: " + maxWidth);
             }
         }
     }

@@ -7,9 +7,12 @@ public class ProgressImagesController : MonoBehaviour
 {
     public Image progressBar; // Ссылка на объект Image полоски прогресса
     public GameObject[] numberImages; // Массив объектов с картинками чисел от 0 до 9
+    public int levelIndex;
 
-    private float maxWidth = 180; // Максимальная ширина полоски
+    public float maxWidth = 180; // Максимальная ширина полоски
     private float currentWidth; // Текущая ширина полоски
+
+    
 
     void Update()
     {
@@ -31,7 +34,27 @@ public class ProgressImagesController : MonoBehaviour
             numberImages[i].SetActive(false); // Скрываем все картинки
         }
 
-        numberImages[tens].SetActive(true); // Открываем картинку с десятками
-        numberImages[ones + 10].SetActive(true); // Открываем картинку с единицами (10 - это сдвиг для единиц)
+        if (RightElementsStateManager.rightElementsState[levelIndex - 2])
+        {
+            numberImages[1].SetActive(true); // Открываем картинку с 1 (десятичная)
+            numberImages[0].SetActive(true); // Открываем картинку с 0 (десятичный)
+            numberImages[10].SetActive(true); // Открываем картинку с 0 (единицы)
+        }
+        else
+        {
+            if (tens > 0 && ones >= 0)
+            {
+                numberImages[tens].SetActive(true); // Открываем картинку с десятками
+                numberImages[ones + 10].SetActive(true); // Открываем картинку с единицами (10 - это сдвиг для единиц)
+            }
+            else if (tens == 0 && ones > 0)
+            {
+                numberImages[ones + 10].SetActive(true); // Открываем картинку с единицами (10 - это сдвиг для единиц)
+            }
+            else
+            {
+                numberImages[10].SetActive(true); // Открываем картинку с 0 (единицы)
+            }
+        }
     }
 }

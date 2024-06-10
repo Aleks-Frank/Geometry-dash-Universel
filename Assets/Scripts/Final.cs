@@ -8,6 +8,7 @@ public class Final : MonoBehaviour
 {
     public GameObject winPanel;
     public Image uiEndImage;
+    public int levelIndex; // Уровень, для которого открывается правый элемент
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,6 +16,7 @@ public class Final : MonoBehaviour
         {
             winPanel.SetActive(true);
             uiEndImage.gameObject.SetActive(true);
+            RightElementsStateManager.rightElementsState[levelIndex - 2] = true; // Устанавливаем состояние правого элемента
             Time.timeScale = 0;
         }
     }

@@ -76286,6 +76286,8 @@ MonoBehaviour:
   - {fileID: 228682638}
   - {fileID: 899950686}
   - {fileID: 852885744}
+  levelIndex: 6
+  maxWidth: 180
 --- !u!114 &819793216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78392,6 +78394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winPanel: {fileID: 2117007728}
   uiEndImage: {fileID: 1171106303}
+  levelIndex: 6
 --- !u!61 &1433075114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -79003,7 +79006,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.010380268, y: -0.033736587}
