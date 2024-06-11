@@ -13583,7 +13583,7 @@ MonoBehaviour:
   - {fileID: 2011526268}
   - {fileID: 1134376800}
   levelIndex: 6
-  maxWidth: 177.5
+  maxWidth: 178
 --- !u!1 &1633819040
 GameObject:
   m_ObjectHideFlags: 0
